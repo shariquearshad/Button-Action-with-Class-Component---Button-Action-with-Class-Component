@@ -5,7 +5,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      message: ""
+      message:
+        "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy",
+      visible: false
     };
   }
 
@@ -16,14 +18,13 @@ class App extends Component {
           id="click"
           onClick={() =>
             this.setState({
-              message:
-                "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"
+              visible: true
             })
           }
         >
           button
         </button>
-        <p id="para">{this.state.message}</p>
+        {this.state.visible && <p id="para">{this.state.message}</p>}
       </div>
     );
   }
